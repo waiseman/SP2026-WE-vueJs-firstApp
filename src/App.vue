@@ -16,6 +16,7 @@ const msg = ref('Hello World! Main Component')
 
 <RouterLink to="/home">Home</RouterLink>
  <RouterLink to="/register">Register</RouterLink>
+ <RouterLink to="/users">Users</RouterLink>
 
  <router-view />
 

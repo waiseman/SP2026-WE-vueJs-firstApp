@@ -1,5 +1,8 @@
 <script setup>
 import { reactive, ref } from 'vue'
+import { api } from '@/api/axios'
+
+
 // All form fields in one reactive object
 const form = reactive({
   name:     '',
@@ -18,8 +21,13 @@ async function handleSubmit() {
     alert('Name is required'
 )
 else 
+{
+       try{
+     const  res = await api.post('http://localhost:3000/api/users',form);
 
-    alert('User Registered Successfully with name : ' + form.name +"email: "+form.email );
+       }catch{
+              alert('Error while posting data');
+       }}
 
 }
 </script>
